@@ -1,0 +1,14 @@
+= Simply Planks =
+Make your chat look like it was written on wooden planks. 
+
+== Installation / Usage ==
+1. Add / Edit a Chat Browser Source and point it at `https://twitch.tv/popout/YourTwitchChannelName/chat` and replace YourTwitchChannelName with your actual twitch channel name.
+2. Copy the contents of `style.css` and paste it into the Custom CSS field
+3. Adjust the font size to match your canvas and stream resolution.
+4. Done
+
+=== Notes === 
+- The style was designed for a 3840x2160 canvas shown on a 1280x720 mobile phone at normal watching distance. 
+
+== Examples ==
+video::https://share.xaymar.com/view/884dc495-32a1-40bd-af61-9fed36d772f0/2025-01-24T03-07-27-410_RustDesk_1061881323_irkela_-_Remote_Desktop_-_RustDesk_a352a63a-fd62-4ff6-80.mp4[width=960,opts=mute]

@@ -1,0 +1,222 @@
+/*
+Copyright 2025 Michael Fabian 'Xaymar' Dirks <info@xaymar.com>
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+body {
+	--message-max-height: 20em;
+	--user-font: "Ink Free";
+	--user-font-size: 33px;
+	--user-font-style: normal;
+	--user-font-variant: normal;
+	--user-font-weight: normal;
+	--message-font: "Carolingia", "Ink Free";
+	--message-font-stretch: "normal";
+	--message-font-size: 40px;
+	--message-font-style: normal;
+	--message-font-variant: normal;
+	--message-font-weight: normal;
+	background: transparent !important;
+}
+
+* {
+	box-sizing: border-box !important;
+}
+
+.stream-chat-header,
+.chat-input,
+.chat-room > :first-child > :nth-child(1),
+.chat-room > :first-child > :nth-child(2),
+.chat-room > :first-child > :nth-child(3),
+.chat-room > :first-child > :nth-child(4),
+.simplebar-track,
+.chat-line__icons,
+.chat-line__timestamp,
+.chat-line__status,
+.chat-line__message span[aria-hidden ~= true],
+.consent-banner {
+	display: none !important;
+}
+
+.chat-room > :first-child > :nth-child(4).chat-list--default {
+	display: block !important;
+}
+
+.chat-room,
+.simplebar-scroll-content,
+.simplebar-content,
+.chat-scrollable-area__message-container > div,
+.chat-scrollable-area__message-container > div > div,
+.chat-scrollable-area__message-container > div > div > div {
+	border: none !important;
+	background: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.simplebar-scroll-content,
+.simplebar-content {
+	overflow: hidden !important;
+	width: 100vw !important;
+	height: 100vh !important;
+}
+
+.chat-list--default,
+.chat-list--default > div {
+	height: 100vh !important;
+}
+
+.simplebar-content {
+	position: relative !important;
+	height: 100vh !important;
+}
+
+.chat-scrollable-area__message-container {
+	position: absolute !important;
+	bottom: 0px !important;
+	padding: 0rem !important;
+}
+
+.chat-line__message-container > div:nth-child(1) {
+	display: none !important;
+}
+
+.user-notice-line {
+	display: none !important;
+}
+
+.chat-line__message {
+	border: none !important;
+	background: transparent !important;
+	color: black !important;
+		
+	animation-name: appear !important;
+	animation-duration: 1s !important;
+	animation-fill-mode: both !important;
+}
+
+.chat-line__no-background {
+	position: relative !important;
+	margin: 0 0 2.5rem 1rem !important;
+	padding: 2rem 0 0 0 !important;
+	border: 1px black solid !important;
+	border-radius: 1rem !important;
+	background: url("https://share.xaymar.com/view/b7e65f99-11b2-4a89-b4f9-61b3d1568f0a/black60pct.png"), url("https://share.xaymar.com/view/06e4b74c-70db-429a-b36d-3954e8960505/woodPlank.png") !important;
+	background-size: 100% auto, 100% 100% !important;
+	background-position: center center, center center !important;
+	background-attachment: fixed !important;
+	box-shadow: rgba(0, 0, 0, .67) inset 0px 0px 1rem, rgba(0, 0, 0, .33) .33rem .33rem 2px !important;
+	width: calc(100vw - 2rem) !important;
+	max-height: var(--message-max-height);
+}
+
+.chat-line__username-container {
+	--height: calc(var(--user-font-size) + 1rem + 2px);
+	display: inline-flex !important;
+	flex-direction: row;
+	flex-flow: row;
+	flex-wrap: nowrap;
+	gap: .5rem;
+	width: auto;
+	height: var(--height) !important;
+	padding: 1px 1rem !important;
+	position: absolute !important;
+	top: calc(var(--height) / 2 * -1) !important;
+	left: 1rem !important;
+	border: 1px rgb(255, 204, 0) solid !important;
+	border-radius: calc(var(--height) / 2) !important;
+	background: url("https://share.xaymar.com/view/06e4b74c-70db-429a-b36d-3954e8960505/woodPlank.png") !important;
+	background-size: cover !important;
+	background-position: center center !important;
+	background-attachment: scroll !important;
+	box-shadow: rgba(0, 0, 0, 1) inset 0px 0px 8px, rgba(0, 0, 0, .2) .25rem .25rem 2px !important;
+	font-family: var(--user-font), Serif !important;
+	font-stretch: var(--user-font-stretch);
+	font-size: var(--user-font-size);
+	font-style: var(--user-font-style);
+	font-variant: var(--user-font-variant);
+	font-weight: var(--user-font-weight);
+}
+
+.chat-line__username-container > div:nth-child(1) {
+	/* This is the SUBSCRIBER text that only the Broadcaster sees. */
+	display: none !important;
+}
+
+.chat-line__username-container > span:nth-child(2) {
+	order: 1;
+	flex-shrink: 1;
+	display: flex !important;
+	height: 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: .25rem;
+}
+
+.chat-badge {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	height: calc(var(--height) - 1.2rem);
+	width: calc(var(--height) - 1.2rem);
+}
+
+.chat-line__username {
+	order: 2;
+	flex-shrink: 1;
+	display: flex !important;
+	height: 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	
+	font-size: var(--user-font-size) !important;
+}
+
+.chat-line__no-background span[data-a-target *= "message-body"] {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	color: white;
+	
+	font-family: var(--message-font), Serif !important;
+	font-stretch: var(--message-font-stretch);
+	font-size: var(--message-font-size);
+	font-style: var(--message-font-style);
+	font-variant: var(--message-font-variant);
+	font-weight: var(--message-font-weight);
+	
+	line-height: 1.2em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.chat-line__message--emote-button {
+	height: 1em;
+}
+
+.chat-image__container {
+	width: 1em;
+	height: 1em;
+}
+
+@keyframes appear {
+	from {
+		translate: 0 100%;
+		opacity: 0;
+		max-height: 0px;
+	}
+	to {
+		translate: 0 0;
+		opacity: 1;
+		max-height: var(--message-max-height);
+	}
+}
